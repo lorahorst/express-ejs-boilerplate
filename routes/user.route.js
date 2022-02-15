@@ -6,21 +6,21 @@ const { isLoggedIn } = require("../middlewares/guard");
 const router = express.Router();
 
 // The sign in form
-router.get("/signup", (req, res) => {
-  res.render("user/signup");
+router.get("/register", (req, res) => {
+  res.render("user/register");
 });
 
 // creates a user
-router.post("/signup", async, (req, res) => {
+router.post("/register", async, (req, res) => {
   const user = new User();
   user.email = req.body.email;
   user.username = req.body.username;
   try {
-    user.password = await brcrypt.hash(req.body.password, 12);
+    user.password = await bcrypt.hash(req.body.password, 12);
     await user.save();
     res.redirect("/user/login");
   } catch (error) {
-    res.redirect("/user/signup");
+    res.redirect("/user/register");
   }
 });
 
