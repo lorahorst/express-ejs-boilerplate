@@ -11,10 +11,10 @@ const postSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  img: {
+  /* img: {
     type: String,
     required: true,
-  },
+  }, */
   createdAt: {
     type: Date,
     default: Date.now,
@@ -24,11 +24,13 @@ const postSchema = mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  // Refers to the User model
   author: {
     type: mongoose.SchemaTypes.ObjectId,
     ref: "User",
     required: true,
   },
+  // Refers to the Comment model
   comments: {
     type: [mongoose.SchemaTypes.ObjectId],
     default: [],
@@ -38,10 +40,11 @@ const postSchema = mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  category: {
+  /* category: {
     type: String,
     required: true,
-  },
+  }, */
 });
 
+// Exports the model and creates the "Post" collection in the database.
 module.exports = mongoose.model("Post", postSchema);

@@ -11,7 +11,7 @@ router.get("/register", (req, res) => {
 });
 
 // creates a user
-router.post("/register", async, (req, res) => {
+router.post("/register", async (req, res) => {
   const user = new User();
   user.email = req.body.email;
   user.username = req.body.username;

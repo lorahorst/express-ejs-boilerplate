@@ -4,19 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/public/css/index.css">
+    <link rel="stylesheet" href="/public/css/index.css" />
     <title>Document</title>
   </head>
   <body>
     <nav>
       <ul>
         <% if (!currentUser) { %>
-          <li><a href="/user/signup">sign up</a></li>
-          <% } %> <% if (!currentUser) { %>
-          <li><a href="/user/login">login</a></li>
-          <% } %> <% if (currentUser) { %>
-          <li><a href="/user/logout">logout</a></li>
-          <% } %>
+        <li><a href="/user/register">Register</a></li>
+        <% } %> <% if (!currentUser) { %>
+        <li><a href="/user/login">Login</a></li>
+        <% } %> <% if (currentUser) { %>
+        <li><a href="/user/logout">Logout</a></li>
+        <% } %> <% if (currentUser) { %>
+        <li><a href="/post/create">create post</a></li>
+        <% } %> <% if (currentUser) { %>
+        <li><a href="/post/viewAll">view all posts</a></li>
+        <% } %> <% if (currentUser) { %>
+        <li><a href="/post/viewPrivate">view private posts</a></li>
+        <% } %> <% if (currentUser) { %>
+        <li><a href="/post/viewPublic">view public posts</a></li>
+        <% } %>
       </ul>
     </nav>
     <%- body %>

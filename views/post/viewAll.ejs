@@ -1,0 +1,8 @@
+<ul>
+    <% posts.forEach((post) => { %>
+    <li>
+      <%= post.title %>
+      <a href="/post/<%= post.id %>">Read</a>
+    </li>
+    <% }) %>
+  </ul>

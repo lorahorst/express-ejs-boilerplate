@@ -17,4 +17,5 @@ const userSchema = new mongoose.Schema({
   },
 });
 
+// Exports the model and creates the "User" collection in the database.
 module.exports = mongoose.model("User", userSchema);

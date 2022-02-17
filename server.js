@@ -34,19 +34,27 @@ app.use(
     }),
   })
 );
-// middle ware for making the user available to all templates
+// middleware for making the user available to all templates
 app.use((req, res, next) => {
   res.locals.currentUser = req.session.currentUser;
   next();
 });
 
-// root route
+// the root route
 app.get("/", (req, res) => {
   res.render("home");
 });
 
-// user route
+// the user route
 const userRouter = require("./routes/user.route");
 app.use("/user", userRouter);
+
+// the post route
+const postRouter = require("./routes/post.route");
+app.use("/post", postRouter);
+
+// the comment route
+const commentRouter = require("./routes/comment.route");
+app.use("/comment", commentRouter);
 
 app.listen(process.env.PORT);
