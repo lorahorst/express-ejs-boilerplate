@@ -10,6 +10,7 @@ router.get("/create", isLoggedIn, (req, res) => {
   res.render("post/create");
 });
 
+
 // The post creation handler
 router.post("/create", isLoggedIn, async (req, res) => {
   const post = new Post();
