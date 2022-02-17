@@ -27,24 +27,24 @@ router.post("/create", isLoggedIn, async (req, res) => {
 });
 
 // Shows all posts
-router.get("/viewAll", isLoggedIn, async (req, res) => {
+router.get("/myJournal", isLoggedIn, async (req, res) => {
   const posts = await Post.find({ author: req.session.currentUser._id });
-  res.render("post/viewAll", { posts });
+  res.render("post/myJournal", { posts });
 });
 
 // Shows private posts
-router.get("viewPrivate", isLoggedIn, async (req, res) => {
+router.get("/viewPrivate", isLoggedIn, async (req, res) => {
   const posts = await Post.find({
     author: req.session.currentUser._id,
     private: true,
   });
-  res.render("post/viewAll", { posts });
+  res.render("post/myJournal", { posts });
 });
 
 // Shows public posts
 router.get("/viewPublic", isLoggedIn, async (req, res) => {
   const posts = await Post.find({ private: false });
-  res.render("post/viewAll", { posts });
+  res.render("post/myJournal", { posts });
 });
 
 // Shows ONE post
