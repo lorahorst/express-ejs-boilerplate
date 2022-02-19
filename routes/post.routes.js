@@ -1,12 +1,13 @@
 const express = require("express");
 const { isLoggedIn } = require("../middlewares/guard");
 const Post = require("../models/post.model");
-const user = require("./../models/user.model");
+const User = require("../models/user.model");
 
 const router = express.Router();
 
 // The post creation form
 router.get("/create", isLoggedIn, (req, res) => {
+  // const category = await Category.find()
   res.render("post/create");
 });
 

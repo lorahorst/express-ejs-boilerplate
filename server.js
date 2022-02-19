@@ -46,15 +46,15 @@ app.get("/", (req, res) => {
 });
 
 // the user route
-const userRouter = require("./routes/user.route");
+const userRouter = require("./routes/user.routes");
 app.use("/user", userRouter);
 
 // the post route
-const postRouter = require("./routes/post.route");
+const postRouter = require("./routes/post.routes");
 app.use("/post", postRouter);
 
 // the comment route
-const commentRouter = require("./routes/comment.route");
+const commentRouter = require("./routes/comment.routes");
 app.use("/comment", commentRouter);
 
 app.listen(process.env.PORT);
