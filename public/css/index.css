@@ -13,3 +13,7 @@ body {
     rgba(255, 245, 230, 1) 100%
   );
 }
+
+li {
+  text-decoration: none;
+}
