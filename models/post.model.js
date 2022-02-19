@@ -40,10 +40,13 @@ const postSchema = mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  /* category: {
-    type: String,
+  // Refers to the Category model
+  category: {
+    type: [mongoose.SchemaTypes.ObjectId],
+    default: [],
+    ref: "Category",
     required: true,
-  }, */
+  },
 });
 
 // Exports the model and creates the "Post" collection in the database.
