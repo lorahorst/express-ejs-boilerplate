@@ -2,18 +2,39 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 body {
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 1) 35%,
-    rgba(255, 245, 230, 1) 100%
-  );
+  size: 50% 50%;
+  background-image: url('../images/background.jpg');
+  background-color: transparent;
+  background-color: rgb (8, 103, 136);
+  background-size: cover;
+  color:antiquewhite;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background-repeat: no-repeat;
 }
 
-li {
+/*
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
   text-decoration: none;
+}
+
+/* Change the link color on hover 
+li a:hover {
+  background-color: #555;
+  color: white;
 }
