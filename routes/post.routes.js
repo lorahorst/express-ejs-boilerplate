@@ -27,6 +27,23 @@ router.post("/create", isLoggedIn, async (req, res) => {
   }
 });
 
+// file upload
+const fileUploader = require('./cloudinary.config')
+
+router.get('/file', async (req, res) => {
+  const images = await File.find()
+  res.render('file', { images })
+})
+
+router.post('/file', fileUploader.single('file'), async (req, res) => {
+  console.log(req.file)
+  await File.create({
+    name: req.file.originalname,
+    url: req.file.path,
+  })
+  res.redirect('/post/create')
+})
+
 // Shows all posts
 router.get("/myJournal", isLoggedIn, async (req, res) => {
   const posts = await Post.find({ author: req.session.currentUser._id });
