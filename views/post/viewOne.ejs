@@ -3,11 +3,7 @@
   <input type="text" name="content" />
   <button type="submit">submit</button>
 </form>
-<ul>
-  <% images.forEach((image) => { %>
-  <li><img src="<%= image.url %> " alt="<%= image.name %> " /></li>
-  <% }) %>
-</ul>
+<img src="<%= post.image %>"/>
 
 <ul>
   comments <% post.comments.forEach(comment => { %>

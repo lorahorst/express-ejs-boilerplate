@@ -60,7 +60,4 @@ app.use("/comment", commentRouter);
 const categoryRouter = require("./routes/category.routes");
 app.use("/category", categoryRouter);
 
-const fileRouter = require("./models/file.model");
-app.use("/file", fileRouter);
-
 app.listen(process.env.PORT);
