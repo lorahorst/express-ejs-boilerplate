@@ -28,7 +28,7 @@ router.post("/create", isLoggedIn, async (req, res) => {
 });
 
 // file upload
-const fileUploader = require('./cloudinary.config')
+/*const fileUploader = require('./cloudinary.config')
 
 router.get('/file', async (req, res) => {
   const images = await File.find()
@@ -43,6 +43,7 @@ router.post('/file', fileUploader.single('file'), async (req, res) => {
   })
   res.redirect('/post/create')
 })
+*/
 
 // Shows all posts
 router.get("/myJournal", isLoggedIn, async (req, res) => {

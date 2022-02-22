@@ -28,12 +28,28 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 170px;
+  padding: 20px 170px;
 }
 
 h1 {
-  padding:30px;
+  text-align: center;
 }
+
+input {
+  background: transparent;
+  font-size: 20px;
+}
+
+form {
+  padding: 40px;
+  text-align: center;
+}
+
+h2 {
+  padding: 30px;
+  text-align: center;
+}
+
 
 .nav-area {
   list-style: none;
