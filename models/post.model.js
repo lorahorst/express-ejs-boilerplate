@@ -11,10 +11,11 @@ const postSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  /* img: {
+  img: {
     type: String,
     required: true,
-  }, */
+    ref: "File",
+  },
   createdAt: {
     type: Date,
     default: Date.now,

@@ -2,48 +2,43 @@ const express = require("express");
 const { isLoggedIn } = require("../middlewares/guard");
 const Post = require("../models/post.model");
 const Category = require("../models/category.model");
+const File = require("../models/file.model");
+const fileUploader = require("../cloudinary.config");
 
 const router = express.Router();
 
 // The post creation form
 router.get("/create", isLoggedIn, async (req, res) => {
+  const images = await File.find();
   const categories = await Category.find();
-  res.render("post/create", { categories });
+  res.render("post/create", { images, categories });
 });
 
 // The post creation handler
-router.post("/create", isLoggedIn, async (req, res) => {
-  const post = new Post();
-  post.title = req.body.title;
-  post.content = req.body.content;
-  post.private = req.body.private;
-  post.category = req.body.category;
-  post.author = req.session.currentUser._id;
-  try {
-    await post.save();
-    res.redirect("/");
-  } catch (error) {
-    res.redirect("/post/create");
+router.post(
+  "/create",
+  isLoggedIn,
+  fileUploader.single("file"),
+  async (req, res) => {
+    const post = new Post();
+    post.title = req.body.title;
+    post.content = req.body.content;
+    post.img = req.body.img;
+    post.private = req.body.private;
+    post.category = req.body.category;
+    post.author = req.session.currentUser._id;
+    try {
+      await File.create({
+        name: req.file.originalname,
+        url: req.file.path,
+      });
+      await post.save();
+      res.redirect("/");
+    } catch (error) {
+      res.redirect("/post/create");
+    }
   }
-});
-
-// file upload
-/*const fileUploader = require('./cloudinary.config')
-
-router.get('/file', async (req, res) => {
-  const images = await File.find()
-  res.render('file', { images })
-})
-
-router.post('/file', fileUploader.single('file'), async (req, res) => {
-  console.log(req.file)
-  await File.create({
-    name: req.file.originalname,
-    url: req.file.path,
-  })
-  res.redirect('/post/create')
-})
-*/
+);
 
 // Shows all posts
 router.get("/myJournal", isLoggedIn, async (req, res) => {
