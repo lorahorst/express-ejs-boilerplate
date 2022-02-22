@@ -2,39 +2,50 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 body {
-  size: 50% 50%;
-  background-image: url('../images/background.jpg');
-  background-color: transparent;
-  background-color: rgb (8, 103, 136);
+  background-image: url('../images/1.jpg');
   background-size: cover;
-  color:antiquewhite;
+  background-position: center center;
+  height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
-  background-repeat: no-repeat;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 50px;
+  color: #fff;
 }
 
-/*
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: #f1f1f1;
-}
-
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
+a {
   text-decoration: none;
 }
 
-/* Change the link color on hover 
-li a:hover {
-  background-color: #555;
-  color: white;
+header {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 170px;
+}
+
+h1 {
+  padding:30px;
+}
+
+.nav-area {
+  list-style: none;
+}
+
+.nav-area li {
+  display: inline-block;
+  padding: 0px 20px;
+  text-transform: uppercase;
+}
+
+.nav-area li a {
+  transition: .3s;
+  color: #fff;
 }

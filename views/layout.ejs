@@ -4,14 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/1.css" />
     <title>Document</title>
   </head>
   <body>
-    <nav class="'navbar">
-      <ul class="navbar-nav">
+  <header>
+    <nav>
+      <ul class="nav-area">
         <% if (!currentUser) { %>
-        <li class="nav-item"><a href="/user/register" class="nav-link">Register</a></li>
+        <li><a href="/user/register" class="nav-link">Register</a></li>
         <% } %> <% if (!currentUser) { %>
         <li><a href="/user/login">Login</a></li>
         <% } %> <% if (currentUser) { %>
@@ -31,6 +32,8 @@
         <li><a href="/post/viewPublic">view public posts</a></li>
         <% } %>
       </ul>
+      </nav>
+    </header>
     <%- body %>
   </div>
   </body>
