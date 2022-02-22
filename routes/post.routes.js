@@ -1,16 +1,15 @@
 const express = require("express");
 const { isLoggedIn } = require("../middlewares/guard");
 const Post = require("../models/post.model");
-const User = require("../models/user.model");
+const Category = require("../models/category.model");
 
 const router = express.Router();
 
 // The post creation form
-router.get("/create", isLoggedIn, (req, res) => {
-  // const category = await Category.find()
-  res.render("post/create");
+router.get("/create", isLoggedIn, async (req, res) => {
+  const categories = await Category.find();
+  res.render("post/create", { categories });
 });
-
 
 // The post creation handler
 router.post("/create", isLoggedIn, async (req, res) => {
@@ -18,6 +17,7 @@ router.post("/create", isLoggedIn, async (req, res) => {
   post.title = req.body.title;
   post.content = req.body.content;
   post.private = req.body.private;
+  post.category = req.body.category;
   post.author = req.session.currentUser._id;
   try {
     await post.save();
@@ -51,6 +51,7 @@ router.get("/viewPublic", isLoggedIn, async (req, res) => {
 // Shows ONE post
 router.get("/:id", isLoggedIn, async (req, res) => {
   const post = await Post.findById(req.params.id)
+    .populate("category")
     .populate("comments")
     .populate("author")
     .populate({
