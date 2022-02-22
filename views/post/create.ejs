@@ -1,25 +1,21 @@
 <h2>Create a Post</h2>
-<form action="/post/create" method="post">
+<form action="/post/create" method="post" enctype="multipart/form-data">
   <input type="text" name="title" placeholder="Title" required />
   <input type="text" name="content" placeholder="Content" required />
+  <input name="file" type="file" />
   <select name="category" multiple>
     <% categories.forEach((category) => { %>
-      <option value="<%= category.id %>"><%= category.name %></option>
-      <% }) %>
+    <option value="<%= category.id %>"><%= category.name %></option>
+    <% }) %>
   </select>
   <div>
-    <input type="radio" name="private" value="false"
-           checked>
+    <input type="radio" name="private" value="false" checked />
     <label for="public">public</label>
   </div>
-  
+
   <div>
-    <input type="radio" name="private" value="true">
+    <input type="radio" name="private" value="true" />
     <label for="private">private</label>
   </div>
-  <button type="submit">submit</button>
-</form>
-<form action="/file" method="post" enctype="multipart/form-data">
-  <input name="file" type="file" />
   <button type="submit">submit</button>
 </form>
