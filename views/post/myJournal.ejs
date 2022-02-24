@@ -1,8 +1,17 @@
-<ul>
+<div class="container">
+  <div class="content">
     <% posts.forEach((post) => { %>
-    <li>
-      <%= post.title %>
-      <a href="/post/<%= post.id %>">Read</a>
-    </li>
+    <div class="post">
+      <img src="<%= post.image %>" />
+      <h2><%= post.title %></h2>
+      <p><%= post.content %></p>
+      <a href="/post/editPost/<%= post.id %>">Edit</a>
+      <div class="actions">
+        <form action="/post/<%= post.id %>?_method=DELETE" method="post">
+          <button type="submit">Delete</button>
+        </form>
+      </div>
+    </div>
     <% }) %>
-  </ul>
+  </div>
+</div>

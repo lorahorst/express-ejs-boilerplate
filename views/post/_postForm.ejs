@@ -1,7 +1,13 @@
-<h2>Create a Post</h2>
-<form action="/post/create" method="post" enctype="multipart/form-data">
-  <input type="text" name="title" placeholder="Title" required />
-  <input type="text" name="content" placeholder="Content" required />
+<form action="/post/createPost" method="post" enctype="multipart/form-data">
+  <input
+    type="text"
+    name="title"
+    placeholder="Title"
+    value="<%= post.title %>"
+    required
+  />
+  <textarea name="description" placeholder="Description" required ><%= post.description %></textarea>
+  <textarea name="content" placeholder="Content" required ><%= post.content %></textarea>
   <input name="file" type="file" />
   <select name="category" multiple>
     <% categories.forEach((category) => { %>
@@ -18,4 +24,5 @@
     <label for="private">private</label>
   </div>
   <button type="submit">submit</button>
+  <a href="/">Cancel</a>
 </form>
