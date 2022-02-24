@@ -1,8 +1,11 @@
 <ul>
+  <div class="container">
     <% posts.forEach((post) => { %>
-    <li>
-      <%= post.title %>
-      <a href="/post/<%= post.id %>">Read</a>
-    </li>
-    <% }) %>
+      <li class = "post">
+        <%= post.title %>
+        <img src="<%= post.image %>" />
+        <a href="/post/<%= post.id %>">Read</a>
+      </li>
+      <% }) %>
+  </div>
   </ul>
