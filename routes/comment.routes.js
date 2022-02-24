@@ -13,9 +13,10 @@ router.post("/create/:id", async (req, res) => {
   const comment = new Comment();
   comment.content = req.body.content;
   comment.author = user._id;
+  console.log(comment)
   await comment.save();
   // append the comment to the post
-  post.comment.push(comment.id);
+  post.comments.push(comment.id);
   await post.save();
   // redirect the user to the page of the commented post
   res.redirect(`/post/${post.id}`);
