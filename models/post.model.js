@@ -11,10 +11,13 @@ const postSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  img: {
+  image: {
     type: String,
     required: true,
-    ref: "File",
+  },
+  imageName: {
+    type: String,
+    required: true,
   },
   createdAt: {
     type: Date,
