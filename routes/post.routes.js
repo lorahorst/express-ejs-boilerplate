@@ -18,13 +18,24 @@ router.post(
   "/createPost",
   isLoggedIn,
   fileUploader.single("file"),
-  async (req, res, next) => {
-    req.post = new Post();
-    req.file.path;
-    req.file.originalname;
-    next();
-  },
-  createPostAndRedirect("createPost")
+  async (req, res) => {
+    console.log(req.file);
+    const post = new Post();
+    post.title = req.body.title;
+    post.description = req.body.description;
+    post.content = req.body.content;
+    post.image = req.file.path;
+    post.imageName = req.file.originalname;
+    post.private = req.body.private;
+    post.category = req.body.category;
+    post.author = req.session.currentUser._id;
+    try {
+      await post.save();
+      res.redirect("/");
+    } catch (error) {
+      res.redirect("/post/createPost");
+    }
+  }
 );
 
 // form for updating an existing post
@@ -39,9 +50,19 @@ router.put(
   "/:id",
   async (req, res, next) => {
     req.post = await Post.findById(req.params.id);
-    next();
-  },
-  createPostAndRedirect("editPost")
+    req.body.title;
+    req.body.description;
+    req.body.content;
+    req.body.private;
+    req.body.category;
+    req.session.currentUser._id;
+    try {
+      await post.save();
+      res.redirect("/");
+    } catch (error) {
+      res.redirect("/post/editPost");
+    }
+  }
 );
 
 // route for handling the deletion of a post
@@ -83,23 +104,5 @@ router.get("/:id", isLoggedIn, async (req, res) => {
     });
   res.render("post/viewOne", { post });
 });
-
-function createPostAndRedirect(template) {
-  return async (req, res) => {
-    console.log(req.file);
-    req.post.title = req.body.title;
-    req.post.description = req.body.description;
-    req.post.content = req.body.content;
-    req.post.private = req.body.private;
-    req.post.category = req.body.category;
-    req.post.author = req.session.currentUser._id;
-    try {
-      await req.post.save();
-      res.redirect("/");
-    } catch (error) {
-      res.render(template, { post: req.post });
-    }
-  };
-}
 
 module.exports = router;
