@@ -28,6 +28,7 @@ body::before {
 }
 
 header {
+  position: relative;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
