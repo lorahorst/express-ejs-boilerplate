@@ -46,24 +46,21 @@ router.get("/editPost/:id", isLoggedIn, async (req, res) => {
 });
 
 // route for handling the update of an existing post
-router.put(
-  "/:id",
-  async (req, res, next) => {
-    req.post = await Post.findById(req.params.id);
-    req.body.title;
-    req.body.description;
-    req.body.content;
-    req.body.private;
-    req.body.category;
-    req.session.currentUser._id;
-    try {
-      await post.save();
-      res.redirect("/");
-    } catch (error) {
-      res.redirect("/post/editPost");
-    }
+router.put("/editPost/:id", async (req, res, next) => {
+  req.post = await Post.findById(req.params.id);
+  req.post.title = req.body.title;
+  req.post.description = req.body.description;
+  req.post.content = req.body.content;
+  req.post.private = req.body.private;
+  req.post.category = req.body.category;
+  req.post.author = req.session.currentUser._id;
+  try {
+    await req.post.save();
+    res.redirect("/");
+  } catch (error) {
+    res.redirect("/post/editPost");
   }
-);
+});
 
 // route for handling the deletion of a post
 router.delete("/:id", isLoggedIn, async (req, res) => {
