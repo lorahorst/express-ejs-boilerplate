@@ -31,7 +31,7 @@ router.post(
     post.author = req.session.currentUser._id;
     try {
       await post.save();
-      res.redirect("/");
+      res.redirect("/post/myJournal");
     } catch (error) {
       res.redirect("/post/createPost");
     }
@@ -88,6 +88,19 @@ router.get("/viewPublic", isLoggedIn, async (req, res) => {
   const posts = await Post.find({ private: false });
   res.render("post/myJournal", { posts });
 });
+
+// Search Page
+router.get("/search", isLoggedIn, async (req, res) => {
+  const categories = await Category.find();
+  res.render("post/search", { categories });
+ });
+ 
+ // Route for handling the search
+ router.post("/search", isLoggedIn, async (req, res) => {
+  const posts = await Post.find({ category: { $all: [req.body.category]}});
+  res.render("post/myJournal", { posts });
+ });
+
 
 // Shows ONE post
 router.get("/:id", isLoggedIn, async (req, res) => {

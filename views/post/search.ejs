@@ -1,0 +1,11 @@
+
+<form action="/post/search" method="post">
+   
+    <select name="category">
+    <% categories.forEach((category) => { %>
+  
+    <option value="<%= category.id %>"><%= category.name %></option>
+    <% }) %>
+  </select>
+  <button type="submit">Submit</button>
+</form>
