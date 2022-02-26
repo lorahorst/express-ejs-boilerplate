@@ -21,7 +21,7 @@ body::before {
   background-position: center center;
   -webkit-filter: grayscale(100%);
   filter: grayscale(30%);
-  /* opacity: 0.85; */
+  opacity: 0.85;
   position: absolute;
   top: 0px;
   right: 0px;
@@ -87,7 +87,8 @@ h3 {
 }
 
 .navLink:hover {
-  color: #db2b39ff;
+  color: rgb(255, 0, 0);
+  text-shadow: rgb(214, 31, 31) 0 3px 25px;
 }
 
 /* post display */
