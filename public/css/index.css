@@ -6,7 +6,6 @@
 }
 
 body {
-  
   height: 100vh;
   width: 100%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -20,7 +19,9 @@ body::before {
   background-image: url("../images/3.jpg");
   background-size: cover;
   background-position: center center;
-  opacity: 0.85;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(30%);
+  /* opacity: 0.85; */
   position: absolute;
   top: 0px;
   right: 0px;
@@ -29,7 +30,6 @@ body::before {
 }
 
 header {
-  
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
@@ -41,75 +41,63 @@ header {
 }
 
 h1 {
-  
   text-align: center;
 }
 
 input {
-  
   background: transparent;
   font-size: 20px;
 }
 
 .userAuth {
-  
   padding: 40px;
   text-align: center;
 }
 
 .postCreation {
-  
   padding: 40px;
   text-align: center;
 }
 
 h2 {
-  
   padding: 30px;
   text-align: center;
 }
 
 h3 {
-  
   padding: 30px;
   text-align: center;
 }
 
 .nav-area {
-  
   list-style: none;
   text-shadow: rgba(0, 0, 0, 1) 0 4px 12px;
 }
 
 .nav-area li {
-  
   display: inline-block;
   padding: 0px 20px;
   text-transform: uppercase;
 }
 
 .navLink {
-  
   text-decoration: none;
   transition: 0.3s;
   color: #fff;
 }
 
 .navLink:hover {
-  
-  color: #fb8332;
+  color: #db2b39ff;
 }
 
 /* post display */
 img {
-  
   display: block;
   height: 280px;
   object-fit: cover;
 }
 
 .content {
-  
   display: flex;
   padding: 20px;
   width: 100%;
@@ -118,7 +106,6 @@ img {
 }
 
 .post {
-  
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -132,7 +119,6 @@ img {
 }
 
 .actions {
-  
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -159,7 +145,7 @@ img {
   margin: 0;
   min-height: 3rem;
   padding: calc(0.875rem - 1px) calc(1.2rem - 1px);
-  
+
   text-decoration: none;
   transition: all 250ms;
   user-select: none;
@@ -171,7 +157,7 @@ img {
 
 .linkBtn:hover,
 .linkBtn:focus {
-  background-color: #fb8332;
+  background-color: #db2b39ff;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
@@ -180,7 +166,7 @@ img {
 }
 
 .linkBtn:active {
-  background-color: #c85000;
+  background-color: #be0202;
   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
   transform: translateY(0);
 }
