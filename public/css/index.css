@@ -2,10 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  position: relative;
 }
 
 body {
-  position: relative;
+  
   height: 100vh;
   width: 100%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -28,7 +29,7 @@ body::before {
 }
 
 header {
-  position: relative;
+  
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
@@ -40,75 +41,75 @@ header {
 }
 
 h1 {
-  position: relative;
+  
   text-align: center;
 }
 
 input {
-  position: relative;
+  
   background: transparent;
   font-size: 20px;
 }
 
 .userAuth {
-  position: relative;
+  
   padding: 40px;
   text-align: center;
 }
 
 .postCreation {
-  position: relative;
+  
   padding: 40px;
   text-align: center;
 }
 
 h2 {
-  position: relative;
+  
   padding: 30px;
   text-align: center;
 }
 
 h3 {
-  position: relative;
+  
   padding: 30px;
   text-align: center;
 }
 
 .nav-area {
-  position: relative;
+  
   list-style: none;
   text-shadow: rgba(0, 0, 0, 1) 0 4px 12px;
 }
 
 .nav-area li {
-  position: relative;
+  
   display: inline-block;
   padding: 0px 20px;
   text-transform: uppercase;
 }
 
 .navLink {
-  position: relative;
+  
   text-decoration: none;
   transition: 0.3s;
   color: #fff;
 }
 
 .navLink:hover {
-  position: relative;
+  
   color: #fb8332;
 }
 
 /* post display */
 img {
-  position: relative;
+  
   display: block;
   height: 280px;
   object-fit: cover;
 }
 
 .content {
-  position: relative;
+  
   display: flex;
   padding: 20px;
   width: 100%;
@@ -117,7 +118,7 @@ img {
 }
 
 .post {
-  position: relative;
+  
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -131,7 +132,7 @@ img {
 }
 
 .actions {
-  position: relative;
+  
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -158,7 +159,7 @@ img {
   margin: 0;
   min-height: 3rem;
   padding: calc(0.875rem - 1px) calc(1.2rem - 1px);
-  position: relative;
+  
   text-decoration: none;
   transition: all 250ms;
   user-select: none;
