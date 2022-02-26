@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: url('../images/1.jpg');
+  background-image: url('../images/3.jpg');
   background-size: cover;
   background-position: center center;
   height: 100vh;
@@ -59,6 +59,7 @@ h3 {
 
 .nav-area {
   list-style: none;
+  text-shadow: rgba(0, 0, 0, 1) 0 4px 12px;
 }
 
 .nav-area li {
