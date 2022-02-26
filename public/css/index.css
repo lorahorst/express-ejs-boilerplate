@@ -16,10 +16,6 @@ body {
   color: #fff;
 }
 
-a {
-  text-decoration: none;
-}
-
 header {
   display: -webkit-flex;
   display: -moz-flex;
@@ -45,6 +41,11 @@ input {
   text-align: center;
 }
 
+.postCreation {
+  padding: 40px;
+  text-align: center;
+}
+
 h2 {
   padding: 30px;
   text-align: center;
@@ -66,9 +67,14 @@ h3 {
   text-transform: uppercase;
 }
 
-.nav-area li a {
+.navLink {
+  text-decoration: none;
   transition: .3s;
   color: #fff;
+}
+
+.navLink:hover {
+  color: #fb8332;
 }
 
 /* post display */
