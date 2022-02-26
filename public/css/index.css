@@ -127,7 +127,8 @@ img {
   height: 700px;
   background-color: rgba(0, 0, 0, 0.24);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
+} 
+
 
 .actions {
   position: relative;
@@ -186,3 +187,4 @@ img {
 p {
   flex-grow: 1;
 }
+
