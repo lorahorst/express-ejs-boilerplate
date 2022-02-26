@@ -1,0 +1,28 @@
+<h1>Edit post</h1>
+<form action="/post/editPost/<%= post.id %>?_method=PUT" method="post">
+  <input
+    type="text"
+    name="title"
+    placeholder="Title"
+    value="<%= post.title %>"
+    required
+  />
+  <textarea name="description" placeholder="Description" required ><%= post.description %></textarea>
+  <textarea name="content" placeholder="Content" required ><%= post.content %></textarea>
+  <select name="category" multiple>
+    <% categories.forEach((category) => { %>
+    <option value="<%= category.id %>"><%= category.name %></option>
+    <% }) %>
+  </select>
+  <div>
+    <input type="radio" name="private" value="false" checked />
+    <label for="public">Public</label>
+  </div>
+
+  <div>
+    <input type="radio" name="private" value="true" />
+    <label for="private">Private</label>
+  </div>
+  <button type="submit">Submit</button>
+  <a href="/">Cancel</a>
+</form>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <ul>
   <div class="container">
     <% posts.forEach((post) => { %>
@@ -9,3 +10,22 @@
       <% }) %>
   </div>
   </ul>
+=======
+<div class="container">
+  <div class="content">
+    <% posts.forEach((post) => { %>
+    <div class="post">
+      <img src="<%= post.image %>" />
+      <h2><%= post.title %></h2>
+      <p><%= post.content %></p>
+      <a href="/post/editPost/<%= post.id %>">Edit</a>
+      <div class="actions">
+        <form action="/post/<%= post.id %>?_method=DELETE" method="post">
+          <button type="submit">Delete</button>
+        </form>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>
+>>>>>>> a8de39cdf703e0167ab40de6e375a9e7753e7b47
