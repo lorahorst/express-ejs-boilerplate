@@ -5,19 +5,26 @@
 }
 
 body {
-  background-image: url('../images/1.jpg');
-  background-size: cover;
-  background-position: center center;
+  position: relative;
   height: 100vh;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 500;
   font-size: 16px;
-  margin: 50px;
   color: #fff;
 }
 
-a {
-  text-decoration: none;
+body::before {
+  content: "";
+  background-image: url("../images/3.jpg");
+  background-size: cover;
+  background-position: center center;
+  opacity: 0.85;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
 }
 
 header {
@@ -32,53 +39,75 @@ header {
 }
 
 h1 {
+  position: relative;
   text-align: center;
 }
 
 input {
+  position: relative;
   background: transparent;
   font-size: 20px;
 }
 
-form {
+.userAuth {
+  position: relative;
+  padding: 40px;
+  text-align: center;
+}
+
+.postCreation {
+  position: relative;
   padding: 40px;
   text-align: center;
 }
 
 h2 {
+  position: relative;
   padding: 30px;
   text-align: center;
 }
 
 h3 {
+  position: relative;
   padding: 30px;
   text-align: center;
 }
 
-
 .nav-area {
+  position: relative;
   list-style: none;
+  text-shadow: rgba(0, 0, 0, 1) 0 4px 12px;
 }
 
 .nav-area li {
+  position: relative;
   display: inline-block;
   padding: 0px 20px;
   text-transform: uppercase;
 }
 
-.nav-area li a {
-  transition: .3s;
+.navLink {
+  position: relative;
+  text-decoration: none;
+  transition: 0.3s;
   color: #fff;
+}
+
+.navLink:hover {
+  position: relative;
+  color: #fb8332;
 }
 
 /* post display */
 img {
+  position: relative;
   display: block;
   height: 280px;
   object-fit: cover;
 }
 
 .content {
+  position: relative;
   display: flex;
   padding: 20px;
   width: 100%;
@@ -87,22 +116,73 @@ img {
 }
 
 .post {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 20px;
   min-width: 250px;
+  min-height: 600px;
   width: 300px;
-  height: 550px;
+  height: 700px;
   background-color: rgba(0, 0, 0, 0.24);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 .actions {
-    display: flex;
-    justify-content: space-between;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+/*--- Buttons ---*/
+.linkBtn {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #177cc0b4;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(0.875rem - 1px) calc(1.2rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.linkBtn:hover,
+.linkBtn:focus {
+  background-color: #fb8332;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.linkBtn:hover {
+  transform: translateY(-1px);
+}
+
+.linkBtn:active {
+  background-color: #c85000;
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  transform: translateY(0);
 }
 
 p {
-    flex-grow: 1;
+  flex-grow: 1;
 }
