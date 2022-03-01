@@ -56,7 +56,7 @@ router.put("/editPost/:id", async (req, res, next) => {
   req.post.author = req.session.currentUser._id;
   try {
     await req.post.save();
-    res.redirect("/");
+    res.redirect("/post/myJournal");
   } catch (error) {
     res.redirect("/post/editPost");
   }

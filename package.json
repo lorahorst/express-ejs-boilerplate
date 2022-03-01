@@ -4,7 +4,8 @@
   "description": "1. In the terminal, type `npm i`\r 2. In `.env` file, replace the variable with your own variables (the default ones are fine)\r 3. Start by implementing the `signin` and the `login` flows",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodem server.js",
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
