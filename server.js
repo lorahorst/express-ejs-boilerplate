@@ -23,6 +23,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 // hooking up the public folder
 app.use(express.static("public"));
+// required for the app when deployed to Heroku (in production)
+app.set("trust proxy", 1);
 // middleware for setting up the session
 app.use(
   session({
