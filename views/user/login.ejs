@@ -1,12 +1,28 @@
+<h1>MY-NICHI</h1>
+<h2>
+  Journal your Journey. <br />
+  Every Page a Memory.
+</h2>
 
-
-<h1>YOUJOU</h1>
-<h2> Journal your Journey.
-  Every Page a Memory. </h2>
-
-<form class="userAuth" action="/user/login" method="post">
-  <input type="email" name="email" placeholder="Email" required />
-  <input type="username" name="username" placeholder="Username" required />
-  <input type="password" name="password" placeholder="Password" required />
-  <button type="submit">submit</button>
+<h1>Login</h1>
+<form class="loginForm" action="user/login" method="post">
+  <div class="formInputMaterial">
+    <input type="text" name="email" required />
+    <label class="labelName" for="username">
+      <span class="contentName">Email</span>
+    </label>
+  </div>
+  <div class="formInputMaterial">
+    <input type="text" name="username" required />
+    <label class="labelName" for="username">
+      <span class="contentName">Username</span>
+    </label>
+  </div>
+  <div class="formInputMaterial">
+    <input type="password" name="password" autocomplete="off" required />
+    <label class="labelName" for="password">
+      <span class="contentName">Password</span>
+    </label>
+  </div>
+  <button type="submit" class="loginBtn">Submit</button>
 </form>
