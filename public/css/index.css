@@ -224,8 +224,9 @@ img {
   min-height: 600px;
   width: 90%;
   height: 90%;
-  background-color: rgba(0, 0, 0, 0.24);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: rgba(0, 0, 0, 0.44);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.12);
+  text-shadow: rgb(0, 0, 0) 0 3px 25px;
 }
 
 .actions {
