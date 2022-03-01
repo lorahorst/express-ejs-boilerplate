@@ -1,8 +1,10 @@
-<h2><%= post.title %></h2>
-<h3><%= post.content %></h3>
-
-
-<img src="<%= post.image %>" />
+<div class="readPost">
+  <div class="imgInPost">
+    <img src="<%= post.image %>" />
+  </div>
+  <h2><%= post.title %></h2>
+  <p><%= post.content %></p>
+</div>
 
 <ul>
   comments <% post.comments.forEach(comment => { %>
