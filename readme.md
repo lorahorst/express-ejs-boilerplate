@@ -12,10 +12,32 @@ will be displayed).
 Also, comments can be placed to posts. These comments will also be displayed, when a post is being read. 
 
 
-Functionalities:
+// Functionalities:
+Users can
+register & login (&logout)
+create/update/read/delete posts
+posts can be private or public
+posts can be searched for by category
+posts consist of title / description / content / picture / category
 
 
+// Used:
+HTML
+CSS
+Javascript ES6
+Node.js
+HTTP
+Express
+EJS
+Middlewares
+Partials
+Mongoose
+Cookies
+Sessions
+Authentication
+GitHub
 
-
-Back-End (MongoDB Structure):
+// Includes:
+4 models
+CRUD
 
