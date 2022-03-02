@@ -36,7 +36,7 @@ router.post("/login", async (req, res) => {
     const isPwCorrect = await bcrypt.compare(req.body.password, user.password);
     if (isPwCorrect) {
       req.session.currentUser = user;
-      res.redirect("/user/profile");
+      res.redirect("/");
     } else {
       res.redirect("/user/login");
     }

@@ -45,6 +45,7 @@ header {
 
 h1 {
   text-align: center;
+  margin-bottom: 40px;
 }
 
 /* The Nav Bar */
@@ -280,3 +281,16 @@ p {
   flex-grow: 1;
 }
 
+.home {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 90vh;
+  height: 70vh;
+  background-color: rgba(0, 0, 0, 0.44);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.12);
+  text-shadow: rgb(0, 0, 0) 0 3px 25px;
+  padding: 30px;
+  margin: 20px;
+  list-style: none;
+}
