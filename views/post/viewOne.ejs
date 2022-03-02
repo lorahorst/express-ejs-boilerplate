@@ -1,16 +1,21 @@
-<h2><%= post.title %></h2>
-<h3><%= post.content %></h3>
+<div class="readPost">
+  <div class="imgInPost">
+    <img src="<%= post.image %>" />
+  </div>
+  <h2><%= post.title %></h2>
+  <p><%= post.content %></p>
+</div>
 
-
-<img src="<%= post.image %>" />
-
-<ul>
-  comments <% post.comments.forEach(comment => { %>
+<ul class="comments">
+  Comments <% post.comments.forEach(comment => { %>
   <li><%= comment.content %></li>
   <% }) %>
 </ul>
 
-<form action="/comment/create/<%= post.id %>" method="post">
+<form class="loginForm" action="/comment/create/<%= post.id %>" method="post">
   <input type="text" name="content" />
-  <button type="submit">submit</button>
+  <label class="labelName" for="content">
+    <span class="contentName">Comment</span>
+  </label>
+  <button class="linkBtn" type="submit">Submit</button>
 </form>

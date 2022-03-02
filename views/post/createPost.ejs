@@ -1,29 +1,47 @@
-<h2>Create Post</h2>
-<form class="postCreation" action="/post/createPost" method="post" enctype="multipart/form-data">
-  <input
-    type="text"
-    name="title"
-    placeholder="Title"
-    value="<%= post.title %>"
-    required
-  />
-  <textarea name="description" placeholder="Description" required ><%= post.description %></textarea>
-  <textarea name="content" placeholder="Content" required ><%= post.content %></textarea>
-  <input name="file" type="file" />
-  <select name="category" multiple>
-    <% categories.forEach((category) => { %>
-    <option value="<%= category.id %>"><%= category.name %></option>
-    <% }) %>
-  </select>
-  <div>
-    <input type="radio" name="private" value="false" checked />
-    <label for="public">Public</label>
-  </div>
+<h1>Create Post</h1>
 
-  <div>
-    <input type="radio" name="private" value="true" />
-    <label for="private">Private</label>
+<form
+  class="loginForm"
+  action="/post/createPost"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <div class="formInputMaterial">
+    <input type="text" name="title" value="<%= post.title %>" required />
+    <label class="labelName" for="title">
+      <span class="contentName">Title</span>
+    </label>
   </div>
-  <button type="submit">Submit</button>
-  <a href="/">Cancel</a>
+  <div class="formInputMaterial">
+    <textarea name="description" required><%= post.description %></textarea>
+    <label class="labelName" for="description">
+      <span class="contentName">Description</span>
+    </label>
+  </div>
+  <div class="formInputMaterial">
+    <textarea name="content" required><%= post.content %></textarea>
+    <label class="labelName" for="content">
+      <span class="contentName">Content</span>
+    </label>
+  </div>
+  <div class="formInputMaterial">
+    <input name="file" type="file" />
+    <select class="linkBtn" name="category" multiple>
+      <% categories.forEach((category) => { %>
+      <option value="<%= category.id %>"><%= category.name %></option>
+      <% }) %>
+    </select>
+  </div>
+  
+  <button type="submit" class="linkBtn">Submit</button>
+  <a class="linkBtn" href="/">Cancel</a>
 </form>
+<div class="radio">
+  <input type="radio" name="private" value="false" checked />
+  <label for="public">Public</label>
+</div>
+
+<div class="radio">
+  <input type="radio" name="private" value="true" />
+  <label for="private">Private</label>
+</div>
