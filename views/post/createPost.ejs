@@ -19,14 +19,14 @@
     </label>
   </div>
   <div class="formInputMaterial">
-    <textarea name="content" maxlength="300" required><%= post.content %></textarea>
+    <textarea name="content" maxlength="500" required><%= post.content %></textarea>
     <label class="labelName" for="content">
       <span class="contentName">Content</span>
     </label>
   </div>
   <div class="formInputMaterial">
     <input name="file" type="file" />
-    <select class="linkBtn" name="category" multiple>
+    <select class="categorySelect" name="category">
       <% categories.forEach((category) => { %>
       <option value="<%= category.id %>"><%= category.name %></option>
       <% }) %>
@@ -39,7 +39,7 @@
   <input type="radio" name="private" value="false" checked />
   <label for="public">Public</label>
 </div>
-<div class="radio">
+<div>
   <input type="radio" name="private" value="true" />
   <label for="private">Private</label>
 </div>

@@ -1,7 +1,7 @@
 
 <form class="postCreation" action="/post/search" method="post">
    
-    <select name="category">
+    <select class="categorySelect" name="category">
     <% categories.forEach((category) => { %>
   
     <option value="<%= category.id %>"><%= category.name %></option>
