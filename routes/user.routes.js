@@ -2,6 +2,7 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const User = require("../models/user.model");
 const { isLoggedIn } = require("../middlewares/guard");
+const fileUploader = require("../cloudinary.config");
 
 const router = express.Router();
 
@@ -58,7 +59,8 @@ router.get("/profile", isLoggedIn, (req, res) => {
 
 
 // route for handling the upload of the user picture
-router.put("/profile/:id", async (req, res,) => {
+router.put("/profile/:id", isLoggedIn,
+fileUploader.single("file"), async (req, res,) => {
   console.log(req.session.currentUser)
   console.log(req.session.currentUser._id)
   req.user.image = req.file.path;
