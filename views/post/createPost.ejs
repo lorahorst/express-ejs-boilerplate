@@ -7,19 +7,19 @@
   enctype="multipart/form-data"
 >
   <div class="formInputMaterial">
-    <input type="text" name="title" value="<%= post.title %>" required />
+    <input type="text" maxlength="75" name="title" value="<%= post.title %>" required />
     <label class="labelName" for="title">
       <span class="contentName">Title</span>
     </label>
   </div>
   <div class="formInputMaterial">
-    <textarea name="description" required><%= post.description %></textarea>
+    <textarea name="description" maxlength="100" required><%= post.description %></textarea>
     <label class="labelName" for="description">
       <span class="contentName">Description</span>
     </label>
   </div>
   <div class="formInputMaterial">
-    <textarea name="content" required><%= post.content %></textarea>
+    <textarea name="content" maxlength="300" required><%= post.content %></textarea>
     <label class="labelName" for="content">
       <span class="contentName">Content</span>
     </label>
@@ -43,4 +43,3 @@
   <button type="submit" class="linkBtn">Submit</button>
   <a class="linkBtn" href="/">Cancel</a>
 </form>
-
