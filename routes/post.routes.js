@@ -42,7 +42,9 @@ router.post(
 router.get("/editPost/:id", isLoggedIn, async (req, res) => {
   const post = await Post.findById(req.params.id);
   const categories = await Category.find();
-  res.render("post/editPost", { post, categories });
+  if (req.session.currentUser._id === post.author._id.toString()) {
+    res.render("post/editPost", { post, categories });
+  }
 });
 
 // route for handling the update of an existing post
@@ -93,14 +95,13 @@ router.get("/viewPublic", isLoggedIn, async (req, res) => {
 router.get("/search", isLoggedIn, async (req, res) => {
   const categories = await Category.find();
   res.render("post/search", { categories });
- });
- 
- // Route for handling the search
- router.post("/search", isLoggedIn, async (req, res) => {
-  const posts = await Post.find({ category: { $all: [req.body.category]}});
-  res.render("post/myJournal", { posts });
- });
+});
 
+// Route for handling the search
+router.post("/search", isLoggedIn, async (req, res) => {
+  const posts = await Post.find({ category: { $all: [req.body.category] } });
+  res.render("post/myJournal", { posts });
+});
 
 // Shows ONE post
 router.get("/:id", isLoggedIn, async (req, res) => {
