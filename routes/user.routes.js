@@ -66,7 +66,7 @@ fileUploader.single("file"), async (req, res,) => {
   req.user.image = req.file.path;
   req.user.imageName = req.file.originalname;
   try {
-    await user.save();
+    await req.user.save();
     res.redirect("/post/myJournal");
   } catch (error) {
     res.redirect("/post/editPost");
