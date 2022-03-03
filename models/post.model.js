@@ -17,11 +17,9 @@ const postSchema = mongoose.Schema({
   },
   image: {
     type: String,
-    required: true,
   },
   imageName: {
     type: String,
-    required: true,
   },
   createdAt: {
     type: Date,
