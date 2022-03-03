@@ -56,15 +56,11 @@ router.get("/profile", isLoggedIn, (req, res) => {
   res.render("user/profile");
 });
 
-/*
-// form for the user profile
-router.get("/profile/:id", isLoggedIn, async (req, res) => {
-  res.render("user/profile");
-});
 
 // route for handling the upload of the user picture
-router.put("/editPost/:id", async (req, res,) => {
-  req.user = await User.findById(req.params.id);
+router.put("/profile/:id", async (req, res,) => {
+  console.log(req.session.currentUser)
+  console.log(req.session.currentUser._id)
   req.user.image = req.file.path;
   req.user.imageName = req.file.originalname;
   try {
@@ -74,6 +70,6 @@ router.put("/editPost/:id", async (req, res,) => {
     res.redirect("/post/editPost");
   }
 });
-*/
+
 
 module.exports = router;

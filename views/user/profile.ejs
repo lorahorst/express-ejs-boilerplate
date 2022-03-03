@@ -3,7 +3,12 @@
     <div><%= currentUser.username %></div>
     <a class="navLink" href="/post/createPost">Create a Post</a>
     
+    <form   action="/user/profile/<%= currentUser.id %>?_method=PUT"
+    method="post">
     <div class="formInputMaterial">
         <input name="file" type="file" />
     </div>
+    <button type="submit" class="linkBtn">Submit</button>
+</form>
+
 </div>

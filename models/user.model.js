@@ -15,7 +15,12 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  
+  image: {
+    type: String,
+  },
+  imageName: {
+    type: String,
+  },
 });
 
 // Exports the model and creates the "User" collection in the database.
