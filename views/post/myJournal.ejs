@@ -7,10 +7,12 @@
       <p><%= post.description %></p>
       <div class="actions">
         <a class="linkBtn" href="/post/<%= post.id %>">read</a>
-        <a class="linkBtn" href="/post/editPost/<%= post.id %>">Edit</a>
-        <form action="/post/<%= post.id %>?_method=DELETE" method="post">
-          <button class="linkBtn" role="button" type="submit">Delete</button>
-        </form>
+        <% if (currentUser._id === post.author._id.toString()) { %>
+          <a class="linkBtn" href="/post/editPost/<%= post.id %>">Edit</a>
+          <form action="/post/<%= post.id %>?_method=DELETE" method="post">
+            <button class="linkBtn" role="button" type="submit">Delete</button>
+          </form>
+        <% } %>
       </div>
     </div>
     <% }) %>
