@@ -1,10 +1,11 @@
 const express = require("express");
+const { isLoggedIn } = require("../middlewares/guard");
 const Comment = require("../models/comment.model");
 const Post = require("../models/post.model");
 
 const router = express.Router();
 
-router.post("/create/:id", async (req, res) => {
+router.post("/create/:id", isLoggedIn, async (req, res) => {
   // acquire the post
   const post = await Post.findById(req.params.id);
   // acquire the user

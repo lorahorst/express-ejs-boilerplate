@@ -149,12 +149,12 @@ h1 {
 /* Post Creation */
 
 .postCreation {
-  padding: 40px;
+  padding: 50px;
   text-align: center;
 }
 
 .radio {
-  margin-top: 30px;
+  margin-top: 250px;
   display: flex;
 }
 
@@ -274,6 +274,11 @@ img {
   background-color: #be0202;
   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
   transform: translateY(0);
+}
+
+.categorySelect {
+  background-color: rgba(0, 0, 0, 0.32);
+  color: white;
 }
 
 p {

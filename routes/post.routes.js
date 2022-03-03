@@ -46,7 +46,7 @@ router.get("/editPost/:id", isLoggedIn, async (req, res) => {
 });
 
 // route for handling the update of an existing post
-router.put("/editPost/:id", async (req, res, next) => {
+router.put("/editPost/:id", isLoggedIn, async (req, res, next) => {
   req.post = await Post.findById(req.params.id);
   req.post.title = req.body.title;
   req.post.description = req.body.description;
