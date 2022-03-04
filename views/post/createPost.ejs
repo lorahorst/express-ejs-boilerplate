@@ -7,7 +7,7 @@
   enctype="multipart/form-data"
 >
   <div class="formInputMaterial">
-    <input type="text" maxlength="75" name="title" value="<%= post.title %>" required />
+    <input class="inputArea" type="text" maxlength="75" name="title" value="<%= post.title %>" required />
     <label class="labelName" for="title">
       <span class="contentName">Title</span>
     </label>
@@ -25,23 +25,22 @@
     </label>
   </div>
   <div class="formInputMaterial">
-    <input name="file" type="file" />
+    <input class="inputArea" name="file" type="file" />
     <select class="categorySelect" name="category">
       <% categories.forEach((category) => { %>
       <option value="<%= category.id %>"><%= category.name %></option>
       <% }) %>
     </select>
   </div>
-  <div id="radio">
-    <div class="radio">
+    <div>
       <input type="radio" name="private" value="false" checked />
-      <label for="public">Public</label>
+      <label for="public">__Public</label>
     </div>
     <div>
       <input type="radio" name="private" value="true" />
-      <label for="private">Private</label>
+      <label for="private">__Private</label>
     </div>
-  </div>
+  
   <button type="submit" class="linkBtn">Submit</button>
   <a class="linkBtn" href="/">Cancel</a>
 </form>
