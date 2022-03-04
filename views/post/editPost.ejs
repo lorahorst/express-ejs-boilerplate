@@ -2,9 +2,8 @@
 
 <form
   class="loginForm"
-  action="/post/editPost/<%= post.id %>?_method=PUT" 
+  action="/post/editPost/<%=post.id%>?_method=PUT" 
   method="post"
-  enctype="multipart/form-data"
 >
   <div class="formInputMaterial">
     <input class="inputArea" type="text" maxlength="75" name="title" value="<%= post.title %>" required />
