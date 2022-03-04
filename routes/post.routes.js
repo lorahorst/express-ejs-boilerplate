@@ -19,7 +19,6 @@ router.post(
   isLoggedIn,
   fileUploader.single("file"),
   async (req, res) => {
-    console.log(req.file);
     const post = new Post();
     post.title = req.body.title;
     post.description = req.body.description;
