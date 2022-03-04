@@ -6,19 +6,30 @@
   method="post"
 >
   <div class="formInputMaterial">
-    <input class="inputArea" type="text" maxlength="75" name="title" value="<%= post.title %>" required />
+    <input
+      class="inputArea"
+      type="text"
+      maxlength="32"
+      name="title"
+      value="<%= post.title %>"
+      required
+    />
     <label class="labelName" for="title">
       <span class="contentName">Title</span>
     </label>
   </div>
   <div class="formInputMaterial">
-    <textarea name="description" maxlength="100" required><%= post.description %></textarea>
+    <textarea name="description" maxlength="100" required>
+<%= post.description %></textarea
+    >
     <label class="labelName" for="description">
       <span class="contentName">Description</span>
     </label>
   </div>
   <div class="formInputMaterial">
-    <textarea name="content" maxlength="500" required><%= post.content %></textarea>
+    <textarea name="content" maxlength="500" required>
+<%= post.content %></textarea
+    >
     <label class="labelName" for="content">
       <span class="contentName">Content</span>
     </label>
@@ -39,6 +50,6 @@
     <label for="private">__Private</label>
   </div>
 
-<button type="submit" class="linkBtn">Submit</button>
-<a class="linkBtn" href="/">Cancel</a>
+  <button type="submit" class="linkBtn">Submit</button>
+  <a class="linkBtn" href="/">Cancel</a>
 </form>
