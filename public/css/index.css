@@ -154,8 +154,11 @@ h1 {
 }
 
 .radio {
-  margin-top: 250px;
   display: flex;
+}
+
+#radio {
+  padding: 20px;
 }
 
 h2 {
