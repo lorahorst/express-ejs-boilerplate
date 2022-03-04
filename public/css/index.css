@@ -18,10 +18,10 @@ body {
   background: url("../images/3.jpg") repeat fixed 100%;
   background-size: cover;
   background-position: center center;
-/*   -webkit-filter: grayscale(100%);
+  /*   -webkit-filter: grayscale(100%);
   filter: grayscale(10%); */
- /*  opacity: 0.5; */
-  position: absolute;
+  /*  opacity: 0.5; */
+  position: relative;
   top: 0px;
   right: 0px;
   bottom: 0px;
@@ -63,7 +63,7 @@ h1 {
 }
 
 .nav-area li {
-  display: inline-block;
+  display: inline-flex;
   padding: 0px 20px;
   text-transform: uppercase;
 }
