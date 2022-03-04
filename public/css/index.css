@@ -186,6 +186,7 @@ img {
 .content {
   display: flex;
   text-align: center;
+  justify-content: center;
   padding: 20px;
   width: 100%;
   gap: 20px;
