@@ -13,9 +13,11 @@
 </ul>
 
 <form class="loginForm" action="/comment/create/<%= post.id %>" method="post">
-  <input class="inputArea" type="text" maxlength="100" name="content" />
-  <label class="labelName" for="content">
-    <span class="contentName">Comment</span>
-  </label>
+  <div>
+    <input class="inputArea" type="text" maxlength="100" name="content" />
+    <label class="labelName" for="content">
+      <span class="contentName">Comment</span>
+    </label>
+  </div>
   <button class="linkBtn" type="submit">Submit</button>
 </form>
