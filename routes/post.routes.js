@@ -41,7 +41,9 @@ router.post(
 router.get("/editPost/:id", isLoggedIn, async (req, res) => {
   const post = await Post.findById(req.params.id);
   const categories = await Category.find();
+  if (req.session.currentUser._id === post.author._id.toString()) {
   res.render("post/editPost", { post, categories });
+  }
 });
 
 // route for handling the update of an existing post
