@@ -96,7 +96,7 @@ router.get("/search", isLoggedIn, async (req, res) => {
  
  // Route for handling the search
  router.post("/search", isLoggedIn, async (req, res) => {
-  const posts = await Post.find({ category: { $all: [req.body.category]}});
+  const posts = await Post.find({ category: { $all: [req.body.category]}, private: false });
   res.render("post/myJournal", { posts });
  });
 
