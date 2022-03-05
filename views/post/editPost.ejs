@@ -4,6 +4,7 @@
   class="loginForm"
   action="/post/editPost/<%=post.id%>?_method=PUT" 
   method="post"
+  enctype="multipart/form-data"
 >
   <div class="formInputMaterial">
     <input
@@ -35,6 +36,7 @@
     </label>
   </div>
   <div class="formInputMaterial">
+    <input class="inputArea" name="file" type="file" />
     <select class="categorySelect" name="category">
       <% categories.forEach((category) => { %>
       <option value="<%= category.id %>"><%= category.name %></option>

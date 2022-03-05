@@ -61,8 +61,9 @@ router.get("/profile", isLoggedIn, (req, res) => {
 // route for handling the upload of the user picture
 router.put("/profile/:id", isLoggedIn,
 fileUploader.single("file"), async (req, res,) => {
-  console.log(req.session.currentUser)
-  console.log(req.session.currentUser._id)
+  req.user = await User.findById(req.params.id)
+  console.log(req.params.id)
+  console.log(currentUser.id)
   req.user.image = req.file.path;
   req.user.imageName = req.file.originalname;
   try {
